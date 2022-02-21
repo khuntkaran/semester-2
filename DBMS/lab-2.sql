@@ -39,8 +39,6 @@ insert into deposit values(107,'shivani','virar',1000,'1995-09-05')
 insert into deposit values(108,'kranti','nehru place',5000,'1995-07-02')
 insert into deposit values(109,'minu','powai',7000,'1995-08-10')
 
-select * from deposit
-
 insert into branch values('vrce','nagpur')
 insert into branch values('ajni','nagpur')
 insert into branch values('karolbagh','delhi')
@@ -51,8 +49,6 @@ insert into branch values('andheri','bombay')
 insert into branch values('virar','bombay')
 insert into branch values('nehru place','delhi')
 insert into branch values('powai','bombay')
-
-select * from branch
 
 insert into customers values('anil','calcutta')
 insert into customers values('sunil','delhi')
@@ -65,8 +61,6 @@ insert into customers values('shivani','bombay')
 insert into customers values('kranti','bombay')
 insert into customers values('naren','bombay')
 
-select * from customers
-
 insert into borrow values(201,'anil','vrce',1000)
 insert into borrow values(206,'mehul','ajni',5000)
 insert into borrow values(311,'sunil','dharampeth',3000)
@@ -74,10 +68,59 @@ insert into borrow values(321,'madhuri','andheri',2000)
 insert into borrow values(375,'prmod','virar',8000)
 insert into borrow values(481,'kranti','nehru place',3000)
 
-select * from borrow
 
-select actno,cname,amount from deposit
+/*2.1*/
+1.	select * from deposit
 
-select loanno,amount from borrow
+2.	select * from borrow
 
-select * from borrow where bname='andheri'
+3.	select * from customers
+
+4.	select actno,cname,amount from deposit
+
+5.	select loanno,amount from borrow
+
+6.	select * from borrow where bname='andheri'
+
+7.	select actno,amount from deposit where actno = 106
+
+8.	Select cname from borrow where amount >5000
+
+9.	select cname from deposit where adate >'1996-12-01'
+
+10.	select cname from deposit where actno<105
+
+11.	select cname from customers where city='nagpur' or city='delhi'
+	select cname from customers where city in('nagpur','delhi')
+
+12.	select cname,bname from deposit where amount>4000 and actno<105
+
+13.	select cname from borrow where amount>=3000 and amount<=8000
+	select cname from borrow where amount between 3000 and 8000
+
+14.	select cname from deposit where bname!='andheri'
+	select cname from deposit where bname<>'andheri'
+
+15.	select cname from borrow where amount is null
+
+16.	select actno,cname,amount from deposit where bname  in('ajni','karolbagh','m.g.road')
+
+17.	select top 5 * from deposit
+
+18.	select top 3 * from deposit where amount>1000
+
+19.	select top 5 loanno,cname from borrow where bname<>'andheri'
+
+20.	select distinct city from customers
+
+21.	select distinct city from branch 
+
+22.	select * from customers order by city asc
+
+23.	select * from deposit order by amount asc
+	select * from deposit order by amount desc
+
+24.	select * from customers order by city desc
+
+25.	select  cname as uni_barrowers from borrow
+
