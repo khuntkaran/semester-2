@@ -124,3 +124,27 @@ insert into borrow values(481,'kranti','nehru place',3000)
 
 25.	select  cname as uni_barrowers from borrow
 
+
+/*2.2*/
+1.  update deposit set amount=5000 where amount=3000
+
+2.  update borrow set bname='c.g.road' where bname='vrce' and cname='anil'
+
+3.  update deposit set actno=111,amount=5000 where cname='sandip'
+
+4.  update borrow set amount=amount+(amount*.1)
+
+5.  update deposit set amount=5000 where actno>103 and actno<107
+
+6.  update borrow set amount = null where loanno=321 
+
+7.  update borrow set bname='ajni', loanno=401 where loanno=201 and bname='c.g.road'
+
+8.  update customers set cname='anil jain' where cname='anil'
+
+9.  update deposit set cname='ramesh', amount=5500 ,bname='vrce' where actno=102
+
+10. update borrow set bname=null , amount=null where loanno=481 and cname='kranti'
+
+
+/*2.3*/
