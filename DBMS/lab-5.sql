@@ -45,7 +45,7 @@ insert into students values(1066,'ashok','jani',null,'baroda','ii-bcz')
 
 15. select city from students where lastname like '______'
 
-16. select * from students where city like ''
+16. select * from students where city not like 'ba%' and city like '______'
 
 17. select * from students where division like 'ii%'
 
@@ -53,4 +53,4 @@ insert into students values(1066,'ashok','jani',null,'baroda','ii-bcz')
 
 19. select stuid,city from students where division like '______' and  website is not null 
 
-20. select * from students where firstname like ''
+20. select * from students where firstname not like '__[a,e,i,o,u]%'
