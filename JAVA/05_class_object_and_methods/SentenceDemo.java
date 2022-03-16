@@ -18,11 +18,9 @@ class sentence {
         {
             n = n.toLowerCase();
             int a=0;
-            for(int i=0;i<n.length();i++)
-            {
+            for(int i=0;i<n.length();i++) {
                 char ch = n.charAt(i);
-                if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){ a++; }
-                else { }
+                if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u') a++;
             }
             return a;
         }

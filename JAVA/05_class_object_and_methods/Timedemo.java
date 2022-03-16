@@ -35,6 +35,7 @@ class Time
         int c = input.nextInt();
 
         Time t2 = new Time(a,b,c);
+
     }
 }
 
@@ -42,6 +43,6 @@ class Time
 public class Timedemo {
     public static void main(String[] args) {
         Time t1 = new Time(2,50,30);
-        t1.time();
+       t1.time();
     }
 }
