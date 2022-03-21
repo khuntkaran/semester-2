@@ -5,10 +5,10 @@
 3.  select convert(varchar,getdate())		//Mar 21 2022  4:55PM
 
 4.  select convert(varchar,getdate(),106)	//21 Mar 2022
-	select convert(varchar,getdate(),6)		//21 Mar 22
+    select convert(varchar,getdate(),6)		//21 Mar 22
 
 5.  select convert(varchar,getdate(),107)	//Mar 21, 2022
-	select convert(varchar,getdate(),7)		//Mar 21, 22
+    select convert(varchar,getdate(),7)		//Mar 21, 22
 
 6.  select DATEDIFF(month,'2008-12-31','2009-03-31')
 
@@ -23,12 +23,12 @@
 11. select dateadd(MONTH,-2,GETDATE())
 
 12. select datename(month,getdate())	//March
-	select datepart(month,getdate())	//3
+    select datepart(month,getdate())	//3
 
 13. select EOMONTH(getdate())
 
 14. select dateadd(DAY,30,GETDATE())
-	select getdate() + 30
+    select getdate() + 30
 
 15. select DATEDIFF(month,'2004-07-16',GETDATE())
-	select DATEDIFF(year,'2004-07-16',GETDATE())
+    select DATEDIFF(year,'2004-07-16',GETDATE())
