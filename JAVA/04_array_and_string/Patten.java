@@ -7,6 +7,10 @@ public class Patten {
 
         for (int i=0;i<a;i++)
         {
+            for(int k=i+1;k<a;k++)
+            {
+                System.out.print(" ");
+            }
             for (int j=0;j<=i;j++)
             {
                 System.out.print("* ");
@@ -15,6 +19,10 @@ public class Patten {
         }
         for (int i=a-1;i>0;i--)
         {
+            for(int k=i;k<a;k++)
+            {
+                System.out.print(" ");
+            }
             for (int j=i;j>0;j--)
             {
                 System.out.print("* ");
