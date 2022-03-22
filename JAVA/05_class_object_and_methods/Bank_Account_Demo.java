@@ -64,5 +64,17 @@ public class Bank_Account_Demo
 		for (int i=0;i<3;i++) {
 			c[i].displayaccountdetails();
 		}
+		
+		Scanner input = new Scanner(System.in);
+		System.out.print("enter accountno to get information :");
+		int a = input.nextInt();
+
+		for(int i=0;i<3;i++)
+		{
+
+			if(c[i].accountno==a){
+				c[i].displayaccountdetails();
+			}
+		}
 	}
 }
