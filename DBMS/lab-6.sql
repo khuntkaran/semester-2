@@ -61,7 +61,7 @@
 13. select SPACE(10)+'karan'+space(15)
 
 14. select 'khunt'+'karan'
-	select concat('khunt','karan')
+    select concat('khunt','karan')
 
 15. select REVERSE('karan')
 
