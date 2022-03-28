@@ -17,7 +17,7 @@ insert into employee values(106,'priya','it',9000,'1990-10-18','ahmedabad')
 insert into employee values(107,'neha','hr',34000,'1991-12-25','rajkot')
 
 1.	select  max(salary) as 'maximum_salary',
-            min(salary) as 'minimum_salary',
+			min(salary) as 'minimum_salary',
             sum(salary)as 'total_salary',
 			avg(salary)as 'average_salary'
 	from employee
