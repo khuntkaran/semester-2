@@ -1,3 +1,5 @@
+/*Data Functions*/
+
 1.  select getdate() as today_date
 
 2.  select getdate() + 365
@@ -32,3 +34,30 @@
 
 15. select DATEDIFF(month,'2004-07-16',GETDATE())
     select DATEDIFF(year,'2004-07-16',GETDATE())
+
+
+/*Aggregate Functions*/
+
+create table student_mark
+(
+	sid int not null,
+	sname varchar(50) not null,
+	marks int not null
+)
+
+insert into student_mark values(1,'john',90)
+insert into student_mark values(2,'martin',80)
+insert into student_mark values(3,'carol',89)
+insert into student_mark values(4,'jack',99)
+insert into student_mark values(5,'rose',88)
+insert into student_mark values(6,'mary',90)
+
+1.	select count(sid) from student_mark
+
+2.	select sum(marks) from student_mark
+
+3.	select avg(marks) from student_mark
+
+4.	select min(marks) from student_mark
+
+5.	select max(marks) from student_mark
