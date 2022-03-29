@@ -45,7 +45,9 @@ insert into employee values(107,'neha','hr',34000,'1991-12-25','rajkot')
 	from employee 
 	GROUP BY department
 
-8.	select avg(salary) from employee GROUP BY department
+8.	select avg(salary) 
+        from employee 
+        GROUP BY department
 
 9.	select min(salary) 
 	from employee
