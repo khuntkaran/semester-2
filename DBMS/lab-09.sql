@@ -32,6 +32,8 @@ insert into electrical values(115,'manish')
 
 7.	select * from computer intersect select * from electrical
 
+
+
 /*into*/
 create table cricket
 (
