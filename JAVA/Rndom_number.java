@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Check {
-    int Check() {
+    int Check2() {
         Random x = new Random();
         int number = x.nextInt(100);
         return number;
@@ -13,7 +13,7 @@ class Result
     int number,i=0;
     Result() {
         Check c = new Check();
-         number = c.Check();
+         number = c.Check2();
         checknumber();
     }
     void checknumber()
