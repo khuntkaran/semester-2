@@ -66,14 +66,15 @@ insert into employee2 values('E06','anjana','E04')
 	inner join result
 	on student.rno=result.rno
 	group by branch
-	order by avg(spi) 
+	order by avg(spi) desc
 
 6.	select branch ,AVG(spi)
 	from student
 	inner join result
 	on student.rno=result.rno
 	where branch in ('ce','me') 
-
+	group by branch
+	
 7.	select *
 	from student
 	left outer join result
@@ -89,9 +90,9 @@ insert into employee2 values('E06','anjana','E04')
 	full outer join result
 	on student.rno=result.rno
 	
-10.	select m.name ,e.name
-	from empioyee e
-	right join empioyee m
+10.	select  e.name,m.name
+	from employee2 e
+	right outer join employee2 m
 	on e.employeeno=m.managerno
 
 ==============================================================================================================================
@@ -125,41 +126,41 @@ insert into village values('falla',4)
 insert into village values('bhesan',5)
 insert into village values('dhoraji',5)
 
-select villagename 
-from village
-left outer join city
-on village.cityid=city.cityid
-where city.cityid=1
+1.	select villagename 
+	from village
+	left outer join city
+	on village.cityid=city.cityid
+	where city.cityid=1
 
-select cityname,villagename ,pincode
-from village
-left outer join city
-on village.cityid=city.cityid
+2.	select cityname,villagename ,pincode
+	from village
+	left outer join city
+	on village.cityid=city.cityid
 
-select cityname,count(village.cityid)
-from city
-inner join village
-on city.cityid=village.cityid
-group by cityname
-having count(village.cityid)>1
+3.	select cityname,count(village.cityid)
+	from city
+	inner join village
+	on city.cityid=village.cityid
+	group by cityname
+	having count(village.cityid)>1
 
-select cityname,count(village.cityid)
-from city
-left outer join village
-on city.cityid=village.cityid
-group by cityname
-having count(village.cityid) =0
+4.	select cityname,count(village.cityid)
+	from city
+	left outer join village
+	on city.cityid=village.cityid
+	group by cityname
+	having count(village.cityid) =0
 
-select cityname,count(village.cityid)
-from city
-left outer join village
-on city.cityid=village.cityid
-group by cityname
+5.	select cityname,count(village.cityid)
+	from city
+	left outer join village
+	on city.cityid=village.cityid
+	group by cityname
 
-select count(cityname)
-from city
-inner join village
-on city.cityid=village.cityid
-where city.cityid>1
-group by cityname
-having count(village.cityid)>1
+6.	select count(cityname)
+	from city
+	inner join village
+	on city.cityid=village.cityid
+	where city.cityid>1
+	group by cityname
+	having count(village.cityid)>1
