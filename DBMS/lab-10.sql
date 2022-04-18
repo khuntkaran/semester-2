@@ -93,3 +93,73 @@ insert into employee2 values('E06','anjana','E04')
 	from empioyee e
 	right join empioyee m
 	on e.employeeno=m.managerno
+
+==============================================================================================================================
+
+create table city
+(
+	cityid int primary key identity(1,1),
+	cityname varchar(50)  unique,
+	pincode varchar(6),
+	remark varchar(250)
+)
+
+create table village
+(
+	villageid int primary key identity(101,1),
+	villagename varchar(25) ,
+	cityid int foreign key references city(cityid),
+)
+
+insert into city values('rajkot','360005','good')
+insert into city values('surat','335009','very good')
+insert into city values('baroda','390001','awesome')
+insert into city values('jamnagar','361003','smart')
+insert into city values('junagadh','362229','historic')
+insert into city values('morbi','363641','ceramic')
+
+insert into village values('raiya',1)
+insert into village values('madhapar',1)
+insert into village values('dodka',3)
+insert into village values('falla',4)
+insert into village values('bhesan',5)
+insert into village values('dhoraji',5)
+
+select villagename 
+from village
+left outer join city
+on village.cityid=city.cityid
+where city.cityid=1
+
+select cityname,villagename ,pincode
+from village
+left outer join city
+on village.cityid=city.cityid
+
+select cityname,count(village.cityid)
+from city
+inner join village
+on city.cityid=village.cityid
+group by cityname
+having count(village.cityid)>1
+
+select cityname,count(village.cityid)
+from city
+left outer join village
+on city.cityid=village.cityid
+group by cityname
+having count(village.cityid) =0
+
+select cityname,count(village.cityid)
+from city
+left outer join village
+on city.cityid=village.cityid
+group by cityname
+
+select count(cityname)
+from city
+inner join village
+on city.cityid=village.cityid
+where city.cityid>1
+group by cityname
+having count(village.cityid)>1
