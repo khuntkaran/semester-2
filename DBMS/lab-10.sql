@@ -55,8 +55,24 @@ insert into employee2 values('E06','anjana','E04')
 	on student.rno = result.rno
 	where branch='ec'
 
+4.	select branch ,AVG(spi)
+	from student
+	inner join result
+	on student.rno=result.rno
+	group by branch
 
+5.	select branch ,AVG(spi)
+	from student
+	inner join result
+	on student.rno=result.rno
+	group by branch
+	order by avg(spi) 
 
+6.	select branch ,AVG(spi)
+	from student
+	inner join result
+	on student.rno=result.rno
+	where branch in ('ce','me') 
 
 7.	select *
 	from student
@@ -72,3 +88,8 @@ insert into employee2 values('E06','anjana','E04')
 	from student
 	full outer join result
 	on student.rno=result.rno
+	
+10.	select m.name ,e.name
+	from empioyee e
+	right join empioyee m
+	on e.employeeno=m.managerno
