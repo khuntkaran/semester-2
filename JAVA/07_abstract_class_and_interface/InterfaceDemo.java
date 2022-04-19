@@ -26,7 +26,7 @@ class in4 implements in2,in3 {
     }
 }
 
-public class Interface{
+public class InterfaceDemo{
     public static void main(String[] args) {
 //        in1 obj1 = new in1();  ----> not allow interface object
         in4 obj2 = new in4();
