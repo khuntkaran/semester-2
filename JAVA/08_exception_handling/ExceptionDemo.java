@@ -3,7 +3,7 @@ class ExceptionDemo2{
     void throwdemo(int a,int b) {
         if(b==0){
             try {
-                throw new Exception("not divied ");
+                throw new Exception();
             }catch (Exception e) {
                 System.out.println("not divied by 0");
             }
@@ -26,6 +26,7 @@ public class ExceptionDemo {
             c=a/b;
             System.out.println("devistion in main : "+c);
         }catch (Exception e){
+            e.printStackTrace();
             System.out.println("data not found");
         }
 
