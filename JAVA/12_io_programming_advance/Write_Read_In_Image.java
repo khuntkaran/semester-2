@@ -4,8 +4,8 @@ public class Write_Read_In_Image {
     public static void main(String[] args){
         int j=1;
         String name = "hello my name is karan";
-        String name2 = "i am software engeneer";
-      
+        String name2 = "i am software engineer";
+
         try {
             FileInputStream fis = new FileInputStream("12_io_programming_advance/4k.jpg");
             FileOutputStream fos = new FileOutputStream("12_io_programming_advance/4k4.jpg");
