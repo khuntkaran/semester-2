@@ -36,17 +36,15 @@ public class Write_Read_In_Image {
             FileInputStream fis2 = new FileInputStream("12_io_programming_advance/4k4.jpg");
             int a=0;
             fis2.skip(79);
-            a = fis2.read();
             for (int i=0;i<name.length();i++) {
-                System.out.print((char) a);
                 a = fis2.read();
+                System.out.print((char) a);
             }
             System.out.println("");
-            fis2.skip(99);
-            a = fis2.read();
+            fis2.skip(100);
             for (int i=0;i<name2.length();i++) {
-                System.out.print((char) a);
                 a = fis2.read();
+                System.out.print((char) a);
             }
         }catch (Exception e){
             e.printStackTrace();
