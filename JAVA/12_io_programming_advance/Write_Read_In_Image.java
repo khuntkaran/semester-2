@@ -5,9 +5,7 @@ public class Write_Read_In_Image {
         int j=1;
         String name = "hello my name is karan";
         String name2 = "i am software engeneer";
-        int z =name.length();
-        int z2 =name2.length();
-
+      
         try {
             FileInputStream fis = new FileInputStream("12_io_programming_advance/4k.jpg");
             FileOutputStream fos = new FileOutputStream("12_io_programming_advance/4k4.jpg");
@@ -17,12 +15,12 @@ public class Write_Read_In_Image {
                 fos.write(a);
                 a = fis.read();
                 if(j==79) {
-                    for (int k = 0; k < z; k++) {
+                    for (int k = 0; k < name.length(); k++) {
                         fos.write((char) name.charAt(k));
                     }
                 }
                 if(j==179) {
-                    for (int k = 0; k < z2; k++) {
+                    for (int k = 0; k <name2.length(); k++) {
                         fos.write((char) name2.charAt(k));
                     }
                 }
@@ -39,14 +37,14 @@ public class Write_Read_In_Image {
             int a=0;
             fis2.skip(79);
             a = fis2.read();
-            for (int i=0;i<z;i++) {
+            for (int i=0;i<name.length();i++) {
                 System.out.print((char) a);
                 a = fis2.read();
             }
             System.out.println("");
             fis2.skip(99);
             a = fis2.read();
-            for (int i=0;i<z2;i++) {
+            for (int i=0;i<name2.length();i++) {
                 System.out.print((char) a);
                 a = fis2.read();
             }
