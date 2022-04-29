@@ -2,6 +2,18 @@ import java.io.FileInputStream;
 
 public class CountFile {
     public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream("10_io_programming_1/java.txt");
+            int a = 0;
+            a = fis.read();
+            while (a!=-1){
+                System.out.print((char) a);
+                a = fis.read();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("hello");
+        }
         int linecount = 0;
         int charcount = 0;
         int wordcount = 0;
@@ -28,6 +40,7 @@ public class CountFile {
         }
         wordcount++;
         linecount++;
+        System.out.println("\n========================================================");
         System.out.println("charter = "+charcount);
         System.out.println("word = "+wordcount);
         System.out.println("line = "+linecount);
