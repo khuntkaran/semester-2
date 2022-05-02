@@ -130,4 +130,8 @@
 	select dbo.prime(9)
 
 
-7.	
+7.	create function oddeventable
+	returns 
+	as
+
+
