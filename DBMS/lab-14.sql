@@ -1,15 +1,15 @@
-begin
-declare @i int
-set @i = 1
-while @i<=10
-begin
-print @i
-set @i=@i+1
-end
-end
+	begin
+	declare @i int
+	set @i = 1
+	while @i<=10
+	begin
+	print @i
+	set @i=@i+1
+	end
+	end
 
 
-1.	create function f2()
+1.	create function print1to10()
 	returns varchar(100)
 	as
 	begin
@@ -24,7 +24,7 @@ end
 		return @demo
 	end
 
-	select dbo.f2()
+	select dbo.print1to10()
 
 
 2.	create function oddeven(@num int)
@@ -43,10 +43,10 @@ end
 		return @demo 
 	end
 
-	select dbo.oddeven(11)
+	select dbo.oddeven(12)
 
 
-3.	create function odd()
+3.	create function odd1to10()
 	returns varchar(100)
 	as
 	begin
@@ -64,7 +64,7 @@ end
 		return @demo
 	end
 
-	select dbo.odd()
+	select dbo.odd1to10()
 
 
 4.	create function sum50()
@@ -127,4 +127,7 @@ end
 		return @demo 
 	end
 
-	select dbo.prime(14)
+	select dbo.prime(9)
+
+
+7.	
