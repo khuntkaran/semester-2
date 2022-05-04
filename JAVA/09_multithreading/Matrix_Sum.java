@@ -22,7 +22,7 @@ class Matrix implements Runnable{
         	for(int j=0;j<2;j++){
         		sum=sum+a[i][j];
         	}
-        	System.out.println("sum : "+sum);
+        	System.out.format("sum %d row : %d\n",(i+1),sum);
         }
     }
 }
