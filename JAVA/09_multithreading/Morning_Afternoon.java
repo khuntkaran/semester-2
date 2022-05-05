@@ -8,8 +8,6 @@ class Morning implements Runnable{
 			}catch(Exception e){
 				e.printStackTrace();
 			}
-			
-
 		}
 	}
 }
@@ -23,8 +21,6 @@ class Afternoon implements Runnable{
 			}catch(Exception e){
 				e.printStackTrace();
 			}
-			
-
 		}
 	}
 }
