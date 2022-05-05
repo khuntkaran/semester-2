@@ -130,8 +130,27 @@
 	select dbo.prime(9)
 
 
-7.	create function oddeventable
-	returns 
+7.	/*drop table Even_No
+	drop table Odd_No(numbers int)
+	create function oddeventable()
+	return tables
 	as
+	begin
+		declare @y int
+		set @y=1
+		while(@y<=50)
+		begin
+			if(@y%2=0)
+			begin
+				insert into Even_No values(@y)
+			end
+			else
+			begin
+				insert into Odd_No values(@y)
+			end
+			set @y=@y+1
+		end 
+		return  Even_No
+	end*/
 
 
