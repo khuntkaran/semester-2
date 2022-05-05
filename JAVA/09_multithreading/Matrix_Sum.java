@@ -1,58 +1,71 @@
-import java.sql.Time;
-import java.time.DateTimeException;
+
 import java.time.Duration;
 import java.time.Instant;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 class Matrix implements Runnable{
-	int[][] a = new int[2][2];
-	void setmatrix(){
-		Scanner input = new Scanner(System.in);
 
-		for(int i=0;i<2;i++){
-			for(int j=0;j<2;j++){
+	int y,m,n;
+	int[][] a ;
+
+	int setmatrix(){
+		Scanner input = new Scanner(System.in);
+		System.out.println("enter row : ");
+		m = input.nextInt();
+		System.out.println("enter column : ");
+		n = input.nextInt();
+		a=new int[m][n];
+		for(int i=0;i<m;i++){
+			for(int j=0;j<n;j++){
 				System.out.format("enter %d rom and %d column : ",(i+1),(j+1));
 				a[i][j]=input.nextInt();
 			}
 
 		}
+		return m;
+	}
+	void printmatrix(){
+		for(int i=0;i<m;i++){
+			for(int j=0;j<n;j++){
+				System.out.print(a[i][j]+" ");
+			}
+			System.out.println();
+		}
 	}
 	public void run()
     {
-
-        for(int i=0;i<2;i++){
-        	for(int j=0;j<2;j++){
-        		System.out.print(a[i][j]+" ");
-        	}
-        	System.out.println();
-        }
-        for(int i=0;i<2;i++){
         	int sum=0;
-        	for(int j=0;j<2;j++){
-        		sum=sum+a[i][j];
+        	for(int j=0;j<n;j++){
+				int k;
+        		sum=sum+a[y][j];
         	}
-        	System.out.format("sum %d row : %d\n",(i+1),sum);
-        }
+        	System.out.format("sum %d row : %d\n",(y+1),sum);
     }
 }
 
 public class Matrix_Sum {
 	public static void main(String[] args) throws InterruptedException {
 		Matrix obj = new Matrix();
-		obj.setmatrix();
+		int x =obj.setmatrix();
 
 		Instant start = Instant.now();
 
-		Thread t1 = new Thread(obj);
-		t1.start();
-		t1.join();
+		obj.printmatrix();
+
+//		Thread t1 = new Thread(obj);
+//		t1.start();
+//		t1.join();
+
+		Thread t[]=new Thread[x];
+		for (int i =0;i<x;i++){
+			obj.y =i;
+			t[i]=new Thread(obj);
+			t[i].start();
+			t[i].join();
+		}
 
 		Instant end = Instant.now();
 		Duration timeElapsed = Duration.between(start, end);
 		System.out.println("Time taken: "+ timeElapsed.toMillis() +" milliseconds");
 
 	}
-
-
 }
