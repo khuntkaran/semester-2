@@ -58,7 +58,7 @@ insert into department values(40,'civil')
 	from student2
 	where rno =(select rno from academic where spi=(select max(spi)from academic))
 
-6.`	select name
+6.	select name
 	from student2
 	where rno in(select rno from academic where bklog>1)
 
