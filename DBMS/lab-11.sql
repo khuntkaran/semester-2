@@ -38,36 +38,44 @@ insert into department values(20,'electrical')
 insert into department values(30,'mechanical')
 insert into department values(40,'civil')
 
-1.	select * 
+1.	select rno,name,city 
 	from student2
-	left outer join department
-	on student2.did=department.did
-	where dname='computer'
+	where did=(select did from department where dname ='computer')
 
 2.	select name
 	from student2
-	left outer join academic
-	on student2.rno=academic.rno
-	where spi>8
+	where rno in(select rno from academic where spi>8)
 
-3.	select * 
+3.	select rno,name,city 
 	from student2
-	left outer join department
-	on student2.did=department.did
-	where dname='computer' and city='rajkot'
+	where city = 'rajkot' and did=(select did from department where dname ='computer')
 
 4.	select COUNT(name)
 	from student2
-	inner join department
-	on student2.did=department.did
-	where dname='electrical'
+	where did=(select did from department where dname='electrical')
 
-5.	
-
-6.`	select *
+5.	select name
 	from student2
-	inner join academic
-	on student2.rno=academic.rno
-	where bklog>1
+	where rno =(select rno from academic where spi=(select max(spi)from academic))
 
-7.
+6.`	select name
+	from student2
+	where rno in(select rno from academic where bklog>1)
+
+7.	select name
+	from student2
+	where rno =(select rno from academic where spi=(select max(spi)from academic where spi<(select max(spi)from academic)))
+
+8.	select rno,name
+	from student2
+	where did in (select did from department where dname ='computer' or dname='mechanical')
+
+9.	select rno,name
+	from student2
+	where did=(select did from student2 where rno=102)
+
+10.	select name
+	from student2
+	where did=(select did from department where dname='electrical')
+	and 
+	rno in(select rno from academic where spi>9)
