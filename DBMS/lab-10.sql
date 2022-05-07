@@ -53,7 +53,7 @@ insert into employee2 values('E06','anjana','E04')
 	from student
 	left outer join result
 	on student.rno = result.rno
-	where branch='ec'
+	where branch<>'ec'
 
 4.	select branch ,AVG(spi)
 	from student
@@ -90,10 +90,10 @@ insert into employee2 values('E06','anjana','E04')
 	full outer join result
 	on student.rno=result.rno
 	
-10.	select  e.name,m.name
-	from employee2 e
-	right outer join employee2 m
-	on e.employeeno=m.managerno
+10.	select m.name as E_Name,e.name as M_Name
+	from employee2 m
+	left outer join employee2 e
+	on m.managerno=e.employeeno
 
 ==============================================================================================================================
 
@@ -157,10 +157,13 @@ insert into village values('dhoraji',5)
 	on city.cityid=village.cityid
 	group by cityname
 
-6.	select count(cityname)
-	from city
-	inner join village
-	on city.cityid=village.cityid
-	where city.cityid>1
-	group by cityname
-	having count(village.cityid)>1
+6.	select count(*)
+	from 
+	(
+		select cityname,count(villageid) as total
+		from city
+		left outer join village
+		on city.cityid=village.cityid
+		group by cityname
+	)as total
+	where total>1

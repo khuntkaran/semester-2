@@ -12,7 +12,7 @@ create table deposit
 create table branch
 (
 	bname varchar(50),
-	city varchar(50),
+	city varchar(50)
 )
 
 create table customers
