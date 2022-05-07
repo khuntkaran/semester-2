@@ -130,27 +130,45 @@
 	select dbo.prime(9)
 
 
-7.	/*drop table Even_No
-	drop table Odd_No(numbers int)
-	create function oddeventable()
-	return tables
+7.	create table Even_No(numbers int)
+	create table Odd_No(numbers int)
+
+	alter function oddeventable()
+	returns @Even_No table(numbers int)
 	as
 	begin
 		declare @y int
+		declare @x int
 		set @y=1
 		while(@y<=50)
 		begin
 			if(@y%2=0)
 			begin
-				insert into Even_No values(@y)
+				exec addeven @y
 			end
 			else
 			begin
-				insert into Odd_No values(@y)
+				exec addodd @y
 			end
 			set @y=@y+1
-		end 
-		return  Even_No
-	end*/
+		end
+		return
+	end
+	
+	select dbo.oddeventable()
+	select  *
+	from  dbo.oddeventable()
+
+	select * from Even_No
+	select * from Odd_No
 
 
+	create procedure addodd @numbers int
+	as
+	insert into Odd_No values(@numbers)
+
+	create procedure addeven @numbers int
+	as
+	insert into Even_No values(@numbers)
+
+	
