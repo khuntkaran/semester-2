@@ -138,7 +138,6 @@
 	as
 	begin
 		declare @y int
-		declare @x int
 		set @y=1
 		while(@y<=50)
 		begin
