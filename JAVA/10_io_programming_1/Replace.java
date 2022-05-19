@@ -7,9 +7,9 @@ import java.io.InputStreamReader;
 
 public class Replace{
 	public static void main(String [] args) throws IOException {
-		FileReader f1=new FileReader("try.txt");
+		FileReader f1=new FileReader("10_io_programming_1/try.txt");
 		BufferedReader bf=new BufferedReader(f1);
-		FileWriter f2=new FileWriter("tt.txt");
+		FileWriter f2=new FileWriter("10_io_programming_1/tt.txt");
 		String word1,word2;
 		BufferedReader bf2=new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter  word you want to replace: ");
