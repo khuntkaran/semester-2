@@ -19,7 +19,7 @@ insert into students values(1066,'ashok','jani',null,'baroda','ii-bcz')
 
 2.  select * from students where firstname like '_____'
 
-3.  select firstname,lastname from students where city like '_____%a'
+3.  select firstname,lastname from students where city like '_____a'
 
 4.  select * from students where lastname like '%tel'
 
