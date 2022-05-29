@@ -113,7 +113,7 @@ insert into borrow values(481,'kranti','nehru place',3000)
 
 20.	select distinct city from customers
 
-21.	select distinct city from branch 
+21.	select distinct bname from branch 
 
 22.	select * from customers order by city asc
 
@@ -164,6 +164,6 @@ insert into borrow values(481,'kranti','nehru place',3000)
 
 8.  delete from deposit where bname<>'andheri'
 
-9.  delete from borrow where amount<2000 and bname='vrce'
+9.  delete from borrow where amount<2000 and bname<>'vrce'
 
 10. drop table branch
