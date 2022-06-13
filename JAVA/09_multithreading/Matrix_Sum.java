@@ -35,7 +35,6 @@ class Matrix implements Runnable{
     {
         	int sum=0;
         	for(int j=0;j<n;j++){
-				int k;
         		sum=sum+a[y][j];
         	}
         	System.out.format("sum %d row : %d\n",(y+1),sum);

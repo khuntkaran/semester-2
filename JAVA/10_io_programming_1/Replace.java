@@ -2,7 +2,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class Replace{
 	public static void main(String [] args) throws IOException {
@@ -10,11 +10,12 @@ public class Replace{
 		BufferedReader bf=new BufferedReader(f1);
 		FileWriter f2=new FileWriter("10_io_programming_1/tt.txt");
 		String word1,word2;
-		BufferedReader bf2=new BufferedReader(new InputStreamReader(System.in));
+		Scanner sc = new Scanner(System.in);
+
 		System.out.println("Enter  word you want to replace: ");
-		word1=bf2.readLine();
+		word1=sc.nextLine();
 		System.out.println("Enter  word you want to replace with: ");
-		word2=bf2.readLine();
+		word2=sc.nextLine();
 		String x="",msg="";
 		int y =0;
 		while((x=bf.readLine())!=null) {

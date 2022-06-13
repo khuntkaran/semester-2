@@ -1,5 +1,6 @@
 import java.util.Scanner;
-class CalculateSpi{
+class
+CalculateSpi{
 
     int id_no;
     int no_of_subject;
