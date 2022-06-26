@@ -1,4 +1,4 @@
-create database karan
+create database sem-2-i
 
 create table deposit
 (
